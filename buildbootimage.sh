@@ -14,9 +14,9 @@ repo sync --force-sync
 
 sed -i "/PLATFORM_SECURITY_PATCH :=/c\      PLATFORM_SECURITY_PATCH := $PATCHDATE" $SOURCEROM/build/core/version_defaults.mk
 
-git -C $SOURCEROM/kernel/xiaomi/sdm660 remote add nebrassy https://github.com/nebrassy/android_kernel_xiaomi_sdm660.git || true
-git -C $SOURCEROM/kernel/xiaomi/sdm660 fetch nebrassy
-git -C $SOURCEROM/kernel/xiaomi/sdm660 checkout nebrassy/MIUI-common-cam
+git -C $SOURCEROM/kernel/xiaomi/sdm660 remote add MiCode https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git || true
+git -C $SOURCEROM/kernel/xiaomi/sdm660 fetch MiCode
+git -C $SOURCEROM/kernel/xiaomi/sdm660 checkout MiCode/jasmine-q-oss
 
 sed -i "$ i\BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive" $SOURCEROM/device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
